@@ -1,14 +1,14 @@
 import json
 import requests
 
-key = 'c1b0a78498516cb449a9aef714e39d48'
+key = ''
 
 # URL represents the main API call. Can be a single movie or a list of movies
 # url = f"https://api.themoviedb.org/3/trending/movie/week?&api_key={key}"
 
 headers = {
     "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWIwYTc4NDk4NTE2Y2I0NDlhOWFlZjcxNGUzOWQ0OCIsInN1YiI6IjY1YTIxNDZjZDM1ZGVhMDEyY2Q0OWM4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5xZjVsmjV5w5pOUb_yTuerdi-PuqtUJ1nHhTIx9tKlE"
+    "Authorization": ""
 }
 
 
