@@ -4,4 +4,4 @@ I wrote a Python script to do a query search of TMDB's database of 950,000+ movi
 Once this "request movie" feature is added into the website, it will allow the community to continuously add their favourite movies and thus create a more representative and diverse database.
 
 See demo video below:
-[![Demo vid](https://ibb.co/n7Kx6p3)](https://drive.google.com/file/d/10qTJbfVqb_NjSDrQOv7E8Q8FFZU_JgjB/view?usp=sharing)
+[![Demo vid](https://postimg.cc/V5dQfwZC)](https://drive.google.com/file/d/10qTJbfVqb_NjSDrQOv7E8Q8FFZU_JgjB/view?usp=sharing)
