@@ -1,0 +1,53 @@
+@keyframes fadeIn {
+    from { 
+        opacity: 1; 
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0px);
+     }
+  }
+  
+.movie-grid {
+    padding: 50px;
+    /* border: red solid; */
+}
+
+.movie-preview {
+    cursor: pointer;
+    max-width: 200px;
+    
+    margin-bottom: 20px; 
+    transition: transform 0.2s;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out; 
+    /* border: red solid; */
+}
+
+.movie-preview:hover {
+    transform: scale(1.02);
+}
+
+.movie-preview img {
+    border-radius: 0.23rem;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.movie-preview span {
+    font-size: 16px;
+    color: rgb(183, 183, 183);
+    margin-top: 10px;
+}
+
+#release-year {
+    color: grey;
+}
+
+@media screen and (max-width: 600px) {
+    .movie-preview span{
+        font-size: 12px;
+    }
+}

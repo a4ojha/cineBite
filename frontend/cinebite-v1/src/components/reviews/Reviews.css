@@ -1,0 +1,56 @@
+.review-container {
+    animation: fadeIn 0.5s ease-out; 
+}
+
+.upvote-button, .downvote-button {
+    /* color: rgb(6, 124, 6); */
+    color: rgb(132, 132, 132);
+    opacity: 0.5;
+    transition: transform 0.15s;
+}
+
+.upvote-button:hover,
+.downvote-button:hover {
+    transform: scale(1.20);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.movie-poster-review {
+    position: relative;
+    display: inline-block;
+}
+
+.play-button-icon-container-review {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.genre-name {
+    font-size: 14px;
+    border: gray solid;
+    border-radius: 8px;
+    padding: 5px;
+    margin-right: 10px;
+    background-color: rgb(58, 58, 58);
+    transition: opacity 0.15s;
+}
+
+.genre-name:hover {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.genres {
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .movie-poster-review {
+        width: 90vw;
+        height: auto;
+    }
+}

@@ -1,0 +1,37 @@
+@media (min-width: 992px) {
+    .navbar-collapse.justify-content-center {
+        display: flex;
+        justify-content: center;
+    }
+    #searchForm {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #searchForm {
+        margin-bottom: 15px;
+    }
+}
+
+#searchform {
+    position: fixed;
+    width: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#searchbar {
+    background-color: rgb(47, 53, 58);
+    color: white;
+    border: none;
+}
+
+#searchbar::placeholder {
+    color: grey;
+}
+
+
+
+/* 33,37,41 */

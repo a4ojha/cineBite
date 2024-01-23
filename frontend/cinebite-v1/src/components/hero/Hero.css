@@ -1,0 +1,111 @@
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movie-carousel-container {
+    background-color: black;
+}
+
+.movie-poster {
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster > img {
+    height: 100%;
+    width: 100%;
+}
+
+.movie-card-container {
+    height: 550px;
+    background-color: black;
+}
+
+.movie-card {
+    position: relative;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), var(--img);
+    /* border: red solid; */
+}
+
+.movie-detail {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    /* border: green solid; */
+}
+
+.movie-title {
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* border: red solid; */
+}
+
+.movie-title h4 {
+    font-weight: 700;
+    font-size: 2em;
+    margin: 0;
+}
+
+.movie-review-button-container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 300px;
+    padding-left: 30px;
+    /* border: blue solid; */
+}
+
+.play-button-icon-container {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    width: 60px;
+    margin-bottom: 50px;
+    /* transform: translate(-50%, -50%); */
+
+}
+
+.play-button-icon {
+    padding: 0;
+    margin: 0;
+    color: grey;
+    opacity: 0.6;
+    font-size: 3rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.play-button-icon:hover {
+    font-size: 4rem;
+    color: white;
+}
+
+/* .movie-review-button-container button {
+    background-color: lightblue;
+    border: none;
+} */
+
+@media only screen and (max-width: 800px) {
+    .movie-detail {
+        flex-direction: column;
+        align-items: center;
+        top: 20px;
+    }
+}
