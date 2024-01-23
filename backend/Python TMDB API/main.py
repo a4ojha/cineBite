@@ -4,7 +4,6 @@ import requests
 key = ''
 
 # URL represents the main API call. Can be a single movie or a list of movies
-# url = f"https://api.themoviedb.org/3/trending/movie/week?&api_key={key}"
 
 headers = {
     "accept": "application/json",
