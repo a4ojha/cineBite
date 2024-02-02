@@ -7,9 +7,6 @@ I am combining my love for movies and coding to build a full-stack project using
 Currently implementing feature to search a larger movie database to add to cineBite's database. See more [here](https://github.com/a4ojha/cineBite/tree/main/backend/Python%20TMDB%20API)
 
 ## Part 1: Back End
-### Notes:
-- I am using IntelliJ IDEA, as it is the industry standard Java IDE
-
 \
 **Database Setup**
 - **MongoDB Atlas** is a platform from MongoDB themselves that allows you to spin up MongoDB servers on the cloud
@@ -30,13 +27,6 @@ Currently implementing feature to search a larger movie database to add to cineB
 The next step is to configure the database so I can connect to the MongoDB cluster I had previously set up and communicate with it.
 
 ## Part 2: Front End
-### Notes: 
-
-**Tools used for front end**:
-- Node.js
-- ReactJS
-- Axios
-- Bootstrap
 
 With Node.js 20.10.0 installed, run
 ```
