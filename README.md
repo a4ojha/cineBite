@@ -7,7 +7,6 @@ I am combining my love for movies and coding to build a full-stack project using
 Currently implementing feature to search a larger movie database to add to cineBite's database. See more [here](https://github.com/a4ojha/cineBite/tree/main/backend/Python%20TMDB%20API)
 
 ## Part 1: Back End
-\
 **Database Setup**
 - **MongoDB Atlas** is a platform from MongoDB themselves that allows you to spin up MongoDB servers on the cloud
     - Need to use a database *client* to connect to this database (I will be using MongoDB Compass, a GUI for working with databases)
@@ -21,10 +20,6 @@ Currently implementing feature to search a larger movie database to add to cineB
 \
 **API Information:**
 ![Spring Boot initializer information](https://i.ibb.co/KqJLDzt/springboot-api-information.png)
-
-\
-**Database Configuration in IntelliJ** \
-The next step is to configure the database so I can connect to the MongoDB cluster I had previously set up and communicate with it.
 
 ## Part 2: Front End
 
