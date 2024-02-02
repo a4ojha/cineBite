@@ -8,6 +8,7 @@ import Header from './components/header/Header';
 import Trailer from './components/trailer/Trailer';
 import Reviews from './components/reviews/Reviews';
 import AllMovies from './components/allMovies/AllMovies';
+import RequestMovie from './components/requestMovie/RequestMovie';
 import Search from './components/search/Search';
 
 
@@ -62,6 +63,7 @@ function App() {
           <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}></Route>
           <Route path="/Reviews/:movieId" element ={<Reviews getMovieData={getMovieData} movie={movie} reviews={reviews} setReviews={setReviews} />}></Route>
           <Route path="/AllMovies" element ={<AllMovies movies={movies}/>}></Route>
+          <Route path="/RequestMovie" element ={<RequestMovie movies={movies}/>}></Route>
           <Route path="/search/:searchQuery" element={<Search movies={movies} />}></Route>
         </Route>
       </Routes>

@@ -4,10 +4,7 @@ import json
 import requests
 
 key = 'c1b0a78498516cb449a9aef714e39d48'
-headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMWIwYTc4NDk4NTE2Y2I0NDlhOWFlZjcxNGUzOWQ0OCIsInN1YiI6IjY1YTIxNDZjZDM1ZGVhMDEyY2Q0OWM4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5xZjVsmjV5w5pOUb_yTuerdi-PuqtUJ1nHhTIx9tKlE"
-}
+
 
 search = input("Movie search: ")
 movie_name = ""
@@ -38,7 +35,7 @@ def formatString(s):
 
 
 url = f"https://api.themoviedb.org/3/search/movie?api_key={key}&query={formatString(search)}"
-output = requests.get(url, headers=headers)
+output = requests.get(url)
 if output.status_code == 200:
     output = output.json()
     
@@ -83,7 +80,7 @@ if len(output['results']) > 0:
 
     # Get and set IMDB ID, trailer link, genres
     external_ids_url = f"https://api.themoviedb.org/3/movie/{movie['id']}?api_key={key}&append_to_response=external_ids&append_to_response=videos"
-    external_ids = requests.get(external_ids_url, headers=headers)
+    external_ids = requests.get(external_ids_url)
 
     if external_ids.status_code == 200:
         external_ids = external_ids.json()
@@ -101,7 +98,7 @@ if len(output['results']) > 0:
 
     # Backdrop paths
     images_url = f"https://api.themoviedb.org/3/movie/{movie['id']}/images?api_key={key}&language=en-US&include_image_language=null"
-    images = requests.get(images_url, headers=headers)
+    images = requests.get(images_url)
 
     if images.status_code == 200:
         images = images.json()

@@ -32,6 +32,9 @@
     color: grey;
 }
 
+#navbar {
+    z-index: 100;
+}
 
 
 /* 33,37,41 */

@@ -30,4 +30,18 @@ public class Movie {
     //  @DocumentReference causes the database to store only the IDs, reviews and the review will be in a separate collection
     @DocumentReference
     private List<Review> reviewIds;
+
+    public Movie(String imdbId, String title, String releaseDate, String trailerLink,
+                 String poster, List<String> genres, List<String> backdrops, String overview,
+                 List<Review> reviewIds) {
+        this.imdbId = imdbId;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.trailerLink = trailerLink;
+        this.poster = poster;
+        this.genres = genres;
+        this.backdrops = backdrops;
+        this.overview = overview;
+        this.reviewIds = reviewIds;
+    }
 }
