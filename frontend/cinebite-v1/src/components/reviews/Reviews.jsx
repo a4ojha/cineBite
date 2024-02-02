@@ -98,10 +98,33 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
         }
     }
 
+    // Work on this, cycling background image
+    // useEffect(() => {
+    //     if (movie?.backdrops?.length > 0) {
+    //       let currentIndex = 0;
+    //       const interval = setInterval(() => {
+    //         const bgImageDiv = document.querySelector('.background-image');
+    //         // Set the image URL as the background image
+    //         bgImageDiv.style.backgroundImage = `url('${movie.backdrops[currentIndex]}')`;
+    //         bgImageDiv.style.backgroundSize = 'cover';
+    //         bgImageDiv.style.backgroundPosition = 'center';
+    //         bgImageDiv.style.opacity = '0.5'; // Set the opacity level here
+    //         // Fade to black effect will be handled by the ::after pseudo-element in CSS
+    //         currentIndex = (currentIndex + 1) % movie.backdrops.length;
+    //       }, 3000); // Change image every 3 seconds
+    
+    //       // Set the initial background image before the interval starts
+    //       document.querySelector('.background-image').style.backgroundImage = `url('${movie.backdrops[0]}')`;
+    
+    //       return () => clearInterval(interval); // Clear interval on component unmount
+    //     }
+    //   }, [movie?.backdrops]);
 
     return (
+        <div>
+        <div className="background-image" style={{"--img": `url(${movie?.backdrops[0]})`}}></div>
         <Container className='review-container'>
-            <Row>
+            <Row className='title-and-info'>
                 <Col style={{marginTop: '30px', fontWeight: 200}}><h3>{movie?.title} / Reviews</h3></Col>
                 <Row>
                     <Col style={{marginTop: '-3px', color: 'grey'}}>
@@ -113,9 +136,9 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 </Row>
             </Row>
             <Row className="mt-2">
-            <Col>
+            <Col className='poster-column'>
                 <div className='movie-poster-review'>
-                    <img src={movie?.poster} alt="" style={{marginBottom: '20px'}}/>
+                    <img src={movie?.poster} alt="" style={{marginBottom: '20px', width: '100%'}}/>
                     <Link to={`/Trailer/${movie?.trailerLink.substring(movie.trailerLink.length - 11)}`}>
                         <div className='play-button-icon-container-review' title="Watch Trailer">
                             <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
@@ -180,6 +203,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 </Col>
             </Row>
         </Container>
+        </div>
     )
 }
 

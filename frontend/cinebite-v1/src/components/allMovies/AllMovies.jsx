@@ -1,9 +1,11 @@
 import './AllMovies.css';
 import {Link, useNavigate} from "react-router-dom";
 import { Col, Row } from 'react-bootstrap';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Reviews from '../reviews/Reviews';
 
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AllMovies = ({movies}) => {
 
@@ -14,8 +16,21 @@ const AllMovies = ({movies}) => {
     navigate(`/Reviews/${movieId}`);
   }
 
+  const request = () => {
+    navigate(`/RequestMovie`);
+  }
+
   return (
     <div className="movie-grid">
+      <div className='greeting'>
+        <div>Don't see a movie you want to leave a review on? Help contribute to the site and&nbsp;
+          <span 
+            className='link-to-request'
+            onClick={() => request()}>request a movie!</span>
+            <FontAwesomeIcon icon={faArrowRight} className='arrow'/>
+        </div>
+      </div>
+
       <Row>
         {
           movies?.sort((a, b) => a.title.localeCompare(b.title)).map((movie) => (       // Sorting movies from A-Z
