@@ -1,4 +1,5 @@
 import './Reviews.css';
+import '../hero/Hero.css';
 import { useEffect, useRef } from "react";
 import api from '../../api/axiosConfig';
 import {Link, useParams} from 'react-router-dom';
@@ -9,6 +10,7 @@ import NavLink from "react-bootstrap/NavLink";
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import loadingGif from '../loading.gif'
 import React from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -98,34 +100,19 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
         }
     }
 
-    // Work on this, cycling background image
-    // useEffect(() => {
-    //     if (movie?.backdrops?.length > 0) {
-    //       let currentIndex = 0;
-    //       const interval = setInterval(() => {
-    //         const bgImageDiv = document.querySelector('.background-image');
-    //         // Set the image URL as the background image
-    //         bgImageDiv.style.backgroundImage = `url('${movie.backdrops[currentIndex]}')`;
-    //         bgImageDiv.style.backgroundSize = 'cover';
-    //         bgImageDiv.style.backgroundPosition = 'center';
-    //         bgImageDiv.style.opacity = '0.5'; // Set the opacity level here
-    //         // Fade to black effect will be handled by the ::after pseudo-element in CSS
-    //         currentIndex = (currentIndex + 1) % movie.backdrops.length;
-    //       }, 3000); // Change image every 3 seconds
-    
-    //       // Set the initial background image before the interval starts
-    //       document.querySelector('.background-image').style.backgroundImage = `url('${movie.backdrops[0]}')`;
-    
-    //       return () => clearInterval(interval); // Clear interval on component unmount
-    //     }
-    //   }, [movie?.backdrops]);
+    if (typeof movie == "undefined" || false) {
+        return <div className='loading'>
+          <img src={loadingGif} className='loading-gif'/>
+          <p className='loading-text'>loading...</p>
+        </div>  
+      }
 
     return (
-        <div>
-        <div className="background-image" style={{"--img": `url(${movie?.backdrops[0]})`}}></div>
+        <div className='blur-effect animate-on-load'>
+        <div className="background-image" style={{"--img": `url(${movie?.backdrops[Math.floor(Math.random() * movie?.backdrops.length)]})`}}></div>
         <Container className='review-container'>
             <Row className='title-and-info'>
-                <Col style={{marginTop: '30px', fontWeight: 200}}><h3>{movie?.title} / Reviews</h3></Col>
+                <Col style={{marginTop: '30px', fontWeight: 200}}><h3>{movie?.title}</h3></Col>
                 <Row>
                     <Col style={{marginTop: '-3px', color: 'grey'}}>
                         <span>{movie?.releaseDate.substring(0, 4)} • </span>
@@ -139,11 +126,13 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
             <Col className='poster-column'>
                 <div className='movie-poster-review'>
                     <img src={movie?.poster} alt="" style={{marginBottom: '20px', width: '100%'}}/>
-                    <Link to={`/Trailer/${movie?.trailerLink.substring(movie.trailerLink.length - 11)}`}>
-                        <div className='play-button-icon-container-review' title="Watch Trailer">
-                            <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
-                        </div>
-                    </Link>
+                    {!movie?.trailerLink.endsWith("watch?v=") && (
+                        <Link to={`/trailer/${movie?.trailerLink.substring(movie.trailerLink.length - 11)}`}>
+                            <div className='play-button-icon-container-review' title="Watch Trailer">
+                                <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
+                            </div>
+                        </Link>
+                    )}
                 </div>
             </Col>
                 <Col>

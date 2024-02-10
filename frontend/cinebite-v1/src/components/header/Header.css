@@ -36,5 +36,11 @@
     z-index: 100;
 }
 
+.logout {
+    transform: scale(1.5);
+    padding-right: 10px;
+    cursor: pointer;
+}
+
 
 /* 33,37,41 */

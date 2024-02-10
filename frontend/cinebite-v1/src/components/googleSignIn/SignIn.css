@@ -1,0 +1,232 @@
+/* Assuming collage.jpg is correctly placed in the public folder */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+  
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./collage.jpg'); /* Adjust path as necessary */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Decrease the background image opacity */
+    z-index: 0;
+}
+  
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 100%);
+    z-index: 1; /* Ensure overlay is above the background image but below the content */
+}
+
+.content-container {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* border: red solid; */
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #444; 
+}
+
+ul {
+    margin-bottom: 0;
+    padding-left: 0; 
+}
+
+ol,ul{
+    margin:0px;
+    padding:0px;
+}
+
+a:hover,
+a:focus,
+input,
+textarea {
+    text-decoration: none;
+    outline: none; 
+}
+
+._lk_de{
+    padding:12vh 0px;
+    position:relative;
+}
+
+.form-02-main {
+    animation: fadeInUp 1.5s ease-out forwards;
+    text-decoration: none;
+}
+
+.form-03-main{
+    width:500px;
+    display:block;
+    margin:20px auto;
+    padding:25px 50px 25px;
+    background:rgba(243, 243, 243, 0.6);
+    border-radius:20px;
+    z-index:9;
+}
+
+.logo{
+    display:flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+
+    /* border: red solid; */
+}
+
+.form-group{
+    padding:15px 0px;
+    display: flex;
+    justify-content: center;
+    width:100%;
+    position: relative;
+}
+
+.form-group p{
+    margin:0px;
+}
+
+.form-control{
+    min-height:45px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 10px 15px;
+    border-radius:10px;
+    border:1px solid#2b3990;
+}
+
+.checkbox{
+    display:flex;
+    justify-content:space-around;
+}
+
+._btn_04 {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0px;
+    background: #2b3990;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+
+._btn_04 a{
+    font-size:15px;
+    color:#fff;
+}
+
+._social_04{
+    display:block;
+    width:100%;
+    padding:15px 0px;
+    text-align:center; 
+}
+
+._social_04 ol li{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    text-align:center;
+    line-height:40px;
+    transition:0.2s;
+    background:#fff;
+    border-radius:6px;
+    border:1px solid#2b3990;
+    margin:0 0 0 10px;
+    transition:0.2s;
+}
+
+._social_04 ol li:nth-child(1):hover{
+    background:#3b5998;
+    border:1px solid#3b5998;
+    color:#fff;
+    transition:0.2s;
+}
+
+._social_04 ol li:nth-child(2):hover{
+    background:#00aced;
+    border:1px solid#00aced;
+    color:#fff;
+    transition:0.2s;
+}
+
+._social_04 ol li:nth-child(3):hover{
+    background:#c32f10;
+    border:1px solid#c32f10;
+    color:#fff;
+    transition:0.2s;
+}
+
+._social_04 ol li:nth-child(4):hover{
+    background:#E1306C;
+    border:1px solid#E1306C;
+    color:#fff;
+    transition:0.2s;
+}
+
+._social_04 ol li:nth-child(5):hover{
+    background:#0177b5;
+    border:1px solid#0177b5;
+    color:#fff;
+    transition:0.2s;
+}
+
+._social_04 ol li:hover,._social_04 ol li:hover i{
+    color:#fff;
+}
+
+._social_04 ol li i:nth-child(1):hover{
+    color:#fff;
+}
+
+._social_04 ol li i{
+    font-size:15px;
+    color:#2b3990;
+}
+
+.nm_lk{
+    text-align:center;
+}
+
+@media screen and (max-width: 600px) {
+    .form-03-main{
+    width: 100%;
+    }
+}

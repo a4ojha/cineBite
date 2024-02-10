@@ -25,6 +25,35 @@
         padding: 6px;
         /* border: red solid; */
     }
+
+    .blur-effect {
+        font-size: small;
+    }
+    
+}
+
+/* Initial state with blur */
+.blur-effect {
+    filter: blur(5px);
+    opacity: 0;
+    transition: filter 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+/* Keyframes for the animation */
+@keyframes blurFadeInOut {
+    0% {
+        filter: blur(5px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Animation trigger */
+.animate-on-load {
+    animation: blurFadeInOut 1.5s ease-out forwards;
 }
 
 /* The next style might mess up the whole website. be wary */

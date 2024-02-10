@@ -5,10 +5,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {NavLink} from "react-router-dom";
-import { faFilm, faSearch, faTicket, faVideoCamera } from '@fortawesome/free-solid-svg-icons';
+import { faFilm, faSearch, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
+import { signOut } from 'firebase/auth';
+import { auth } from '../googleSignIn/firebaseConfig'; 
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +20,17 @@ const Header = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (!searchTerm.trim()) return; // Prevents empty queries
+
         navigate(`/search/${searchTerm}`);
+    };
+
+    const handleSignOut = () => {
+        signOut(auth).then(() => {
+            localStorage.clear();
+        }).catch((error) => {
+            console.error("Sign out error", error);
+        });
     };
 
     return (
@@ -30,8 +43,8 @@ const Header = () => {
             <Navbar.Collapse id="navbarScroll" className="justify-content-center">
                 <Nav className="mr-auto my-2 my-lg-0" style={{maxHeight: '150px'}} id="links">
                     <NavLink className="nav-link" to="/">Home</NavLink>
-                    <NavLink className="nav-link" to="/AllMovies">All Movies</NavLink>
-                    <NavLink className="nav-link" to="/RequestMovie">Contribute</NavLink>
+                    <NavLink className="nav-link" to="/movies">All Movies</NavLink>
+                    <NavLink className="nav-link" to="/request">Contribute</NavLink>
                 </Nav>
                 <form onSubmit={handleSubmit} className="d-flex mx-lg-auto" id='searchForm'>
                     <input
@@ -48,8 +61,8 @@ const Header = () => {
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
                 </form>
-                <Button variant="outline-secondary" className="me-2">Login</Button>
-                <Button variant="outline-success">Register</Button>
+                {/* <Button variant="outline-danger" className="me-2" onClick={handleSignOut}>Logout</Button> */}
+                <FontAwesomeIcon icon={faRightFromBracket} onClick={handleSignOut} className='logout' title='Logout'/>
             </Navbar.Collapse>
         </Container>
     </Navbar>
