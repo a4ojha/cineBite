@@ -112,7 +112,10 @@ const Search = ({movies}) => {
             </Dropdown>
           </div>
         </div>
-        </div>
+      </div>
+
+      <hr />
+
       <Row>
         {sortedMovies?.length > 0 && sortedMovies.map((movie) => {
           // Check if the movie title matches the search query
@@ -137,14 +140,14 @@ const Search = ({movies}) => {
         {movies?.length > 0 && !movies.some(movie => movie.title.toLowerCase().includes(searchQuery.toLowerCase())) && (
           <Col>
             <div className="no-movies" style={{marginBottom: '10px'}}>Your search "{searchQuery}" has no results.</div>
-            <div className='greeting'>
-              <div>Are we missing peak cinema? Help contribute to the site and&nbsp;
-                <span 
-                  className='link-to-request'
-                  onClick={() => request()}>request a movie!</span>
-                  <FontAwesomeIcon icon={faArrowRight} className='arrow'/>
+              <div className='greeting'>
+                <div>Are we missing peak cinema? Help contribute to the site and&nbsp;
+                  <span 
+                    className='link-to-request'
+                    onClick={() => request()}>request a movie!</span>
+                    <FontAwesomeIcon icon={faArrowRight} className='arrow'/>
+                </div>
               </div>
-            </div>
           </Col>
         )}
       </Row>

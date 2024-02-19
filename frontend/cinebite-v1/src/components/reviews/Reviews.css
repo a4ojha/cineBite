@@ -1,9 +1,14 @@
 @media screen and (max-width: 600px) {
     .movie-poster-review {
-        margin: auto;
         width: 80vw;
         height: auto;
         /* border: red solid; */
+    }
+    
+    .movie-poster-review img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .poster-column {
@@ -97,6 +102,11 @@
     display: inline-block;
 }
 
+.movie-poster-review img {
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
 .play-button-icon-container-review {
     position: absolute;
     top: 50%;
@@ -122,6 +132,3 @@
 .genres {
     margin-bottom: 30px;
 }
-
-
-

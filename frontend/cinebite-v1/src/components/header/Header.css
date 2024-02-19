@@ -4,8 +4,12 @@
         justify-content: center;
     }
     #searchForm {
-        margin-left: auto !important;
-        margin-right: auto !important;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #navbarScroll {
+        justify-content: space-between;
     }
 }
 
@@ -13,13 +17,9 @@
     #searchForm {
         margin-bottom: 15px;
     }
-}
-
-#searchform {
-    position: fixed;
-    width: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
+    .logout {
+        margin-left: 10px;
+    }
 }
 
 #searchbar {
@@ -40,6 +40,11 @@
     transform: scale(1.5);
     padding-right: 10px;
     cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.logout:hover {
+    transform: scale(1.75);
 }
 
 

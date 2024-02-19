@@ -118,6 +118,7 @@ const AllMovies = ({movies}) => {
           </div>
         </div>
       </div>
+      <hr />
       <Row>
         {
           sortedMovies?.map((movie) => (       // Sorting movies from A-Z

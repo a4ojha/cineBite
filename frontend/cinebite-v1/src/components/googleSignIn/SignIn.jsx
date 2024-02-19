@@ -38,42 +38,42 @@ function SignIn() {
       </div>
       <div className="content-container">
       {/* <button onClick={handleClick}>Sign in with Google</button> */}
-        <section class="form-02-main">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="_lk_de">
-                  <div class="form-03-main">
-                    <div class="logo">
+        <section className="form-02-main">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="_lk_de">
+                  <div className="form-03-main">
+                    <div className="logo">
                       <div style={{ fontWeight: '700', fontSize: 'larger' }}>welcome to</div>
                       <img src= {logo} style={{ width: '70%' }}/>
                     </div>
-                    <div class="form-group">
-                      <input type="email" name="email" class="form-control _ge_de_ol" placeholder="Enter Email" required="" aria-required="true" />
+                    <div className="form-group">
+                      <input type="email" name="email" className="form-control _ge_de_ol" placeholder="Enter Email" required="" aria-required="true" />
                     </div>
 
-                    <div class="form-group">
-                      <input type="password" name="password" class="form-control _ge_de_ol" placeholder="Enter Password" required="" aria-required="true" />
+                    <div className="form-group">
+                      <input type="password" name="password" className="form-control _ge_de_ol" placeholder="Enter Password" required="" aria-required="true" />
                     </div>
 
-                    <div class="checkbox form-group">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="" />
-                        <label class="form-check-label" for="">
+                    <div className="checkbox form-group">
+                      <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="" />
+                        <label className="form-check-label" htmlFor="">
                           Remember me
                         </label>
                       </div>
                     </div>
 
-                    <div class="form-group">
-                      <button class="_btn_04" onClick={loginError}>
+                    <div className="form-group">
+                      <button className="_btn_04" onClick={loginError}>
                         <>Login</>
                       </button>
                     </div>
 
-                    <div class="form-group nm_lk"><p>Or...</p></div>
+                    <div className="form-group nm_lk"><p>Or</p></div>
 
-                    <div class="form-group pt-0">
+                    <div className="form-group pt-0">
                       <GoogleButton onClick={handleClick}/>
                     </div>
                   </div>

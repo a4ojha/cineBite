@@ -111,8 +111,8 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
         <div className='blur-effect animate-on-load'>
         <div className="background-image" style={{"--img": `url(${movie?.backdrops[Math.floor(Math.random() * movie?.backdrops.length)]})`}}></div>
         <Container className='review-container'>
-            <Row className='title-and-info'>
-                <Col style={{marginTop: '30px', fontWeight: 200}}><h3>{movie?.title}</h3></Col>
+            <Row>
+                <Col style={{marginTop: '30px', fontWeight: 200}}><h3>{movie?.title} / Reviews</h3></Col>
                 <Row>
                     <Col style={{marginTop: '-3px', color: 'grey'}}>
                         <span>{movie?.releaseDate.substring(0, 4)} • </span>
@@ -121,19 +121,16 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                         </a>
                     </Col>
                 </Row>
-            </Row>
+            </Row >
             <Row className="mt-2">
             <Col className='poster-column'>
-            <Col className='poster-column'>
                 <div className='movie-poster-review'>
-                    <img src={movie?.poster} alt="" style={{marginBottom: '20px', width: '100%'}}/>
-                    {!movie?.trailerLink.endsWith("watch?v=") && (
-                        <Link to={`/trailer/${movie?.trailerLink.substring(movie.trailerLink.length - 11)}`}>
-                            <div className='play-button-icon-container-review' title="Watch Trailer">
-                                <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
-                            </div>
-                        </Link>
-                    )}
+                    <img src={movie?.poster} alt="" style={{marginBottom: '20px'}}/>
+                    <Link to={`/Trailer/${movie?.trailerLink.substring(movie.trailerLink.length - 11)}`}>
+                        <div className='play-button-icon-container-review' title="Watch Trailer">
+                            <FontAwesomeIcon className='play-button-icon' icon={faCirclePlay}/>
+                        </div>
+                    </Link>
                 </div>
             </Col>
                 <Col>
@@ -193,7 +190,6 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 </Col>
             </Row>
         </Container>
-        </div>
         </div>
     )
 }
