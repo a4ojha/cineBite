@@ -1,4 +1,4 @@
-FROM maven:latest
+FROM maven:latest AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
