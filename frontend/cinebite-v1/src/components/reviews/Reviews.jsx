@@ -124,6 +124,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
             </Row>
             <Row className="mt-2">
             <Col className='poster-column'>
+            <Col className='poster-column'>
                 <div className='movie-poster-review'>
                     <img src={movie?.poster} alt="" style={{marginBottom: '20px', width: '100%'}}/>
                     {!movie?.trailerLink.endsWith("watch?v=") && (
@@ -192,6 +193,7 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
                 </Col>
             </Row>
         </Container>
+        </div>
         </div>
     )
 }

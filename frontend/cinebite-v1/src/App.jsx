@@ -14,6 +14,7 @@ import Trailer from './components/trailer/Trailer';
 import Reviews from './components/reviews/Reviews';
 import AllMovies from './components/allMovies/AllMovies';
 import RequestMovie from './components/requestMovie/RequestMovie';
+import RequestMovie from './components/requestMovie/RequestMovie';
 import Search from './components/search/Search';
 
 

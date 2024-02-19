@@ -35,12 +35,14 @@ const Header = () => {
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg" style={{marginTop: '-10px'}} id="navbar">
+        <Navbar bg="dark" variant="dark" expand="lg" style={{marginTop: '-10px'}} id="navbar">
         <Container fluid>
             <Navbar.Brand href="/" style={{"color": "lightblue", fontWeight: 700}}>
                 <FontAwesomeIcon icon={faFilm} style={{marginRight: '8px'}} />cineBite
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll" className="justify-content-center">
+                <Nav className="mr-auto my-2 my-lg-0" style={{maxHeight: '150px'}} id="links">
                 <Nav className="mr-auto my-2 my-lg-0" style={{maxHeight: '150px'}} id="links">
                     <NavLink className="nav-link" to="/">Home</NavLink>
                     <NavLink className="nav-link" to="/movies">All Movies</NavLink>
@@ -51,10 +53,12 @@ const Header = () => {
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
                         className="form-control me-2"
+                        className="form-control me-2"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
                         id='searchbar'
+                        title='Search for a movie'
                         title='Search for a movie'
                     />
                     <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="search-button">

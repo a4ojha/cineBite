@@ -45,6 +45,8 @@
     cursor: pointer;
     max-width: 250px;
     min-width: 90px;
+    max-width: 250px;
+    min-width: 90px;
     margin-bottom: 20px; 
     transition: transform 0.2s;
     text-align: center;
@@ -121,7 +123,56 @@
 
 
 
+.greeting {
+    color: rgb(175,175,175);
+    margin-bottom: 20px;
+}
+
+.link-to-request {
+    cursor: pointer;
+    color: lightblue;
+    position: relative;
+    text-decoration: none;
+    font-weight: bolder;
+    display: inline-block;
+    padding-bottom: 3px; /* Adjust to position the underline */
+}
+
+.arrow {
+    margin-left: 5px;
+    color: lightblue;
+
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.link-to-request:hover + .arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.link-to-request::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position right at the text bottom */
+    width: 100%;
+    height: 0.5px; /* Initial thickness */
+    background: currentColor;
+    transition: transform 0.3s; /* Transition for the transform property */
+    transform-origin: left center; /* Ensures the scaling is from the left */
+    transform: scaleY(0.5); /* Initial scale */
+}
+
+.link-to-request:hover::after {
+    transform: scaleY(3); /* Scale up the width on hover */
+}
+
+
+
 @media screen and (max-width: 600px) {
+    .movie-preview span {
     .movie-preview span {
         font-size: 12px;
     }
