@@ -170,7 +170,10 @@ const Reviews = ({getMovieData,movie,reviews,setReviews}) => {
 
                                         <Col>
                                             <div>{r.body}</div>
-                                            <div style={{color: 'grey'}}>{formatDate(r?.id.date)} • {formatTime(r?.id.date)}</div>
+                                            <div className='review-info'>
+                                                <span style={{color: 'grey'}}>user</span> 
+                                                <span style={{color: 'grey'}}>{formatDate(r?.id.date)} • {formatTime(r?.id.date)}</span>
+                                            </div>
                                         </Col>
                                     </Row>
                                     <Row>

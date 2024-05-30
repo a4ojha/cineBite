@@ -132,3 +132,9 @@
 .genres {
     margin-bottom: 30px;
 }
+
+.review-info {
+    /* border: 'red solid'; */
+    display: flex;
+    justify-content: space-between;
+}

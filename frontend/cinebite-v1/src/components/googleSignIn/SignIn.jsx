@@ -3,18 +3,23 @@ import { auth, provider } from './firebaseConfig';
 import { useEffect, useState } from 'react';
 import Home from '../home/Home';
 import collage from './collage.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 
 import GoogleButton from 'react-google-button'
 import logo from './logo.png'
 
 import { ToastContainer, toast } from 'react-toastify';
-
+import '../allMovies/AllMovies.css';
 import './SignIn.css';
 import '../reviews/Reviews.css';
 
 const loginError = () => {
   toast.error("Error logging in, try using 'Sign in with Google'");
 }
+
+
 
 function SignIn() {
     const [value, setValue] = useState('');
@@ -76,6 +81,13 @@ function SignIn() {
                     <div className="form-group pt-0">
                       <GoogleButton onClick={handleClick}/>
                     </div>
+
+                    {/* To implement: link to sign up page */}
+                    {/* <div className='form-group'>
+                      Don't have an account? <span className='link-to-request' style={{marginLeft: '5px', color: 'rgb(17, 48, 158)'}}> Sign up </span>
+                      <FontAwesomeIcon icon={faArrowRight} className='arrow' style={{marginTop: '4px', color: 'rgb(17, 48, 158)'}}/>
+                    </div> */}
+
                   </div>
                 </div>
               </div>
