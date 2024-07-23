@@ -9,6 +9,8 @@ import { faFilm, faSearch, faRightFromBracket } from '@fortawesome/free-solid-sv
 import { useState } from 'react';
 import { Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Icon from '@mdi/react';
+import { mdiBatteryChargingOutline, mdiBatteryChargingWireless, mdiNewBox } from '@mdi/js';
 
 import { signOut } from 'firebase/auth';
 import { auth } from '../googleSignIn/firebaseConfig'; 
@@ -41,10 +43,15 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-                <Nav className="mr-auto my-2 my-lg-0" style={{maxHeight: '150px'}} id="links">
+                <Nav className="mr-auto my-2 my-lg-0" style={{maxHeight: '150px', display: 'flex', alignItems: 'center'}} id="links">
                     <NavLink className="nav-link" to="/">Home</NavLink>
                     <NavLink className="nav-link" to="/movies">All Movies</NavLink>
-                    <NavLink className="nav-link" to="/request">Contribute</NavLink>
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                        <NavLink className="nav-link" to="/request">Contribute</NavLink>
+                        <span id="new-icon" style={{ display: 'inline-block' }}>
+                            <Icon path={mdiNewBox} size={1} style={{ color: '#B7D4FF', marginLeft: '5px' }} />
+                        </span>
+                    </div>
                 </Nav>
                 <form onSubmit={handleSubmit} className="d-flex mx-lg-auto" id='searchForm'>
                     <input

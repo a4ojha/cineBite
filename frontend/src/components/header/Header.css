@@ -11,6 +11,10 @@
     #navbarScroll {
         justify-content: space-between;
     }
+    #new-icon {
+        margin-left: -5px;
+        /* border: red solid; */
+    }
 }
 
 @media (max-width: 992px) {
